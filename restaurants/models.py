@@ -7,7 +7,7 @@ from django.urls import reverse
 class Restaurant(models.Model):
     """Restaurant model"""
 
-    name = models.CharField(max_length="150")
+    name = models.CharField(max_length=150)
 
     create = models.DateTimeField(auto_now_add=True)
     update = models.DateTimeField(auto_now=True)
@@ -21,8 +21,6 @@ class Review(models.Model):
     user_id = models.ForeignKey("auth.User", on_delete=models.CASCADE, related_name="reviews")
 
     body = models.TextField()
-
-    rating = models.IntegerChoices(1, 5)
 
     create = models.DateTimeField(auto_now_add=True)
     update = models.DateTimeField(auto_now=True)
