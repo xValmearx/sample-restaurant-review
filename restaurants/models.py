@@ -3,6 +3,8 @@ from django.urls import reverse
 
 # Create your models here.
 
+# super user: user = caleb,pass= password, email = calebs.phone2017@gmail.com
+
 
 class Restaurant(models.Model):
     """Restaurant model"""
@@ -11,6 +13,9 @@ class Restaurant(models.Model):
 
     create = models.DateTimeField(auto_now_add=True)
     update = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
 
 
 class Review(models.Model):
@@ -24,3 +29,6 @@ class Review(models.Model):
 
     create = models.DateTimeField(auto_now_add=True)
     update = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.body[:50]
