@@ -15,17 +15,27 @@ class Restaurant(models.Model):
     update = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.name
+        return self.name[:50]
 
 
 class Review(models.Model):
     """Model for reviews"""
 
-    restaurant_id = models.ForeignKey(Restaurant, on_delete=models.CASCADE, related_name="reviews")
+    restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE, related_name="reviews")
 
-    user_id = models.ForeignKey("auth.User", on_delete=models.CASCADE, related_name="reviews")
+    user = models.ForeignKey("auth.User", on_delete=models.CASCADE, related_name="reviews")
 
     body = models.TextField()
+
+    ratings_choices = (
+        ("five", "5"),
+        ("four", "4"),
+        ("three", "3"),
+        ("two", "2"),
+        ("one", "1"),
+    )
+
+    rating = models.CharField(max_length=6, choices=ratings_choices, default="five")
 
     create = models.DateTimeField(auto_now_add=True)
     update = models.DateTimeField(auto_now=True)
