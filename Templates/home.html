@@ -1,9 +1,17 @@
 {% extends "base.html" %}
 
-{% block title %}hello{% endblock title %}hello
+{% block title %}{% endblock title %}
 
 {% block contents %}
   <p>hello this is the home page</p>
+
+  <ul>
+    {% for restaurant  in restaurant_list %}
+      <li>
+        <a href = "{% url "review_details" restaurant.pk %}"> {{restaurant.name}}</a>
+      </li>
+    {% endfor %}
+  </ul>
 {% endblock contents %}
 
 {% block footer %}here is the footer{% endblock footer %}here is the footer

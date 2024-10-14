@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %} {{restaurant.name}} reviews {% endblock title %}
+
+{% block contents %}
+
+  {% for review in review_list %}
+    <p>{{review.body}}</p>
+  {% endfor %}
+
+{% endblock contents %}
+
