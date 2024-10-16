@@ -1,6 +1,6 @@
 from django.views.generic import ListView, DetailView
 
-from .models import Restaurant
+from .models import Restaurant, Review
 
 
 class RestaurantView(ListView):
