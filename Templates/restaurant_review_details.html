@@ -4,9 +4,17 @@
 
 {% block contents %}
 
-  {% for review in restaurant.reviews.all%}
+  {% if restaurant.reviews.all%}
+
+    {% for review in restaurant.reviews.all%}
     <p>{{review.body}}</p>
-  {% endfor %}
+    {% endfor %}
+
+  {% else %}
+    <p>No reviews here</p>
+
+  {% endif %}
+
 
 {% endblock contents %}
 

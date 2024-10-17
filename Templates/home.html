@@ -5,10 +5,12 @@
 {% block contents %}
   <p>hello this is the home page</p>
 
+  <a href = "{% url "restaurant_review_new"%}" >New Review</a>
+
   <ul>
     {% for restaurant  in restaurant_list %}
       <li>
-        <a href = "{% url "review_details" restaurant.pk %}"> {{restaurant.name}}</a>
+        <a href = "{% url "restaurant_review_details" restaurant.pk %}"> {{restaurant.name}}</a>
       </li>
     {% endfor %}
   </ul>
