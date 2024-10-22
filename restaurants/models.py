@@ -28,11 +28,11 @@ class Review(models.Model):
     body = models.TextField()
 
     ratings_choices = (
-        ("five", "5"),
-        ("four", "4"),
-        ("three", "3"),
-        ("two", "2"),
-        ("one", "1"),
+        ("5", "5"),
+        ("4", "4"),
+        ("3", "3"),
+        ("2", "2"),
+        ("1", "1"),
     )
 
     rating = models.CharField(max_length=6, choices=ratings_choices, default="five")
@@ -41,7 +41,7 @@ class Review(models.Model):
     update = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.name[:50]
+        return self.body[:50]
 
     def get_absolute_url(self):
         return reverse(

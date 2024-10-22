@@ -9,12 +9,17 @@ class RestaurantView(ListView):
     template_name = "home.html"
 
 
-class RestaurantReviewDetailView(DetailView):
+class RestaurantDetailView(DetailView):
     model = Restaurant
-    template_name = "restaurant_review_details.html"
+    template_name = "restaurant_details.html"
 
 
-class RestaurantCreateReview(CreateView):
+class CreateReview(CreateView):
     model = Review
-    template_name = "restaurant_review_new.html"
+    template_name = "review_new.html"
     fields = ["restaurant", "user", "body", "rating"]
+
+
+class DetailedReview(DeleteView):
+    model = Review
+    template_name = "review_details.html"
