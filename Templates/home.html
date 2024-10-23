@@ -2,12 +2,30 @@
 
 {% block title %}All Restaurants {% endblock title %}
 {% block contents %}
-  <hr>
-  {% for restaurant  in restaurant_list %}
-      <h3><a href = "{% url "restaurant_details" restaurant.pk %}"> {{restaurant.name}}</a></h3>
-      <hr>
+
+
+
+  {% if user.is_authenticated %}
+
+  <br>
+
+    <hr>
+    {% for restaurant  in restaurant_list %}
+        <h3><a href = "{% url "restaurant_details" restaurant.pk %}"> {{restaurant.name}}</a></h3>
+        <hr>
+
   {% endfor %}
+
+  {% else %}
+    <br>
+    <br>
+
+    <h2>You are not loggin in, please <a href = {% url "login" %}>Log In </a> or <a href = {% url "signup" %}>Sign Up</a> here</h2>
+
+
+
+  {% endif %}
+
 
 {% endblock contents %}
 
-{% block footer %}here is the footer{% endblock footer %}here is the footer
