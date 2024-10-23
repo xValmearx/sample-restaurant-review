@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block page_name %}
-Detailed Review Page
+<a href="javascript:history.back()">{{review.restaurant}}</a>
 {% endblock page_name %}
 
 {% block title %}
@@ -10,12 +10,13 @@ Detailed Review Page
 
 
 {% block contents %}
-  <div class="card" style="width: 50rem;">
+
+  <div class="card" style="width: 75rem;">
     <div class="card-body">
       <p class="card-text">{{review.user}} - {{review.rating}} stars - {{review.create}}</p>
       <h5 class="card-title">{{review.body}}</h5>
-      <p><a href = "{% url 'review_update' review.pk%}">+ Edit Review</a></p>
-      <p><a href = "{% url 'review_delete' review.pk%}">+ Delete Review</a></p>
+      <p><a class="btn btn-success" href = "{% url 'review_update' review.pk%}" role="button" >+ Edit Review</a>
+      <a class="btn btn-danger" href = "{% url 'review_delete' review.pk%}" role="button">+ Delete Review</a></p>
     </div>
   </div>
 {% endblock contents %}

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}<a href = "{% url "review_new"%}" >New Review</a> {% endblock title %}
+{% block title %} <h1><a class="btn btn-primary" href = "{% url "review_new"%}" class - "btn btn-primary">Write New Review</a></h1> {% endblock title %}
 
 
 {% block page_name %} {{restaurant.name}}{% endblock page_name %}
@@ -11,11 +11,11 @@
 
 
     {% for review in restaurant.reviews.all%}
-    <div class="card" style="width: 50rem;">
+    <div class="card" style="width: 75rem;">
       <div class="card-body">
         <p class="card-text">{{review.user}} - {{review.rating}} stars - {{review.create}}</p>
         <h5 class="card-title">{{review.body}}</h5>
-        <a href = "{% url "review_details" review.pk%}" class="btn btn-primary">Review Details</a>
+        <a class="btn btn-primary" href = "{% url "review_details" review.pk%}" class="btn btn-primary">Review Details</a>
       </div>
     </div>
     {% endfor %}

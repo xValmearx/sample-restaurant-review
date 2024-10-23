@@ -1,6 +1,9 @@
 {% extends "base.html" %}
+{% block page_name %}
+<a href="javascript:history.back()">Back</a>
+{% endblock page_name %}
 
-{% block title %} {{restaurant.name}} new review {% endblock title %}
+{% block title %} new review {% endblock title %}
 
 {% block contents %}
 

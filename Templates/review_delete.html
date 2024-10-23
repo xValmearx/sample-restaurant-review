@@ -1,14 +1,29 @@
 {% extends "base.html" %}
 
+{% block page_name %} <a href="javascript:history.back()">{{review.restaurant}}</a> {% endblock page_name %}
+
+{% block title %}
+  {{review.restaurant}} - Delete Review
+{% endblock title %}
+
 {% block contents %}
 
   <form action ="" method = "POST">
 
     {% csrf_token%}
 
+    <div class="card" style="width: 75rem;">
+      <div class="card-body">
+        <p class="card-text">{{review.user}} - {{review.rating}} stars - {{review.create}}</p>
+        <h5 class="card-title">{{review.body}}</h5>
+      </div>
+    </div>
+
+    <br>
+
     <p>Are you sure you want to delete "{{review.body}}"?</p>
 
-    <input type = "submit" value = "Confirm">
+    <input type = "submit" value = "Delete" class="btn btn-danger" >
 
   </form>
 
