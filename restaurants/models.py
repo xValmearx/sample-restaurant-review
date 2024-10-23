@@ -44,6 +44,4 @@ class Review(models.Model):
         return self.body[:50]
 
     def get_absolute_url(self):
-        return reverse(
-            "home",
-        )
+        return reverse("review_details", kwargs={"pk": self.pk})

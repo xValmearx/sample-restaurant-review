@@ -2,6 +2,8 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 
 from .models import Restaurant, Review
 
+from django.urls import reverse_lazy
+
 
 class RestaurantView(ListView):
     model = Restaurant
@@ -20,6 +22,22 @@ class CreateReview(CreateView):
     fields = ["restaurant", "user", "body", "rating"]
 
 
-class DetailedReview(DeleteView):
+class DetailedReview(DetailView):
     model = Review
     template_name = "review_details.html"
+
+
+class DeleteReview(DeleteView):
+    model = Review
+
+    template_name = "review_delete.html"
+
+    success_url = reverse_lazy("home")
+
+
+class UpdateReview(UpdateView):
+    model = Review
+
+    template_name = "review_update.html"
+
+    fields = ["body", "rating"]
