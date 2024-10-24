@@ -1,3 +1,6 @@
+<!Caleb Taylor>
+<! CIS 218>
+<! 10/24/2024>
 {% extends "base.html" %}
 {% block page_name %}
 <a href="javascript:history.back()">Back</a>
@@ -6,6 +9,7 @@
 {% block title %} new review {% endblock title %}
 
 {% block contents %}
+<br>
 
   <form action="" method = "POST">
 
@@ -13,7 +17,7 @@
 
     {{form.as_p}}
 
-    <button type = "submit">Save</button>
+    <button class="btn btn-primary" type = "submit">Save</button>
 
   </form>
 {% endblock contents %}

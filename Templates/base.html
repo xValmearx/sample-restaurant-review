@@ -1,3 +1,6 @@
+<!Caleb Taylor>
+<! CIS 218>
+<! 10/24/2024>
 
 <!doctype html>
 <html lang="en">
@@ -25,16 +28,13 @@
         <ul class="navbar-nav">
 
           <li class="nav-item active">
-            <h2><a href = "{% url 'home'%}"> Home</a> - {% block page_name %} {% endblock page_name %}</h2>
+            <h2 style = "color:white"><a href = "{% url 'home'%}"> Home </a> - {% block page_name %} {% endblock page_name %}</h2>
           </li>
 
-          <li>
-            <p>   </p>
-          </li>
 
           <li class="nav-item">
           {% if user.is_authenticated %}
-          <h2><a href = {% url "logout" %}>Logout</a></h2>
+          <h2><a href = {% url "logout" %}> / Logout </a></h2>
 
           {% else %}
 

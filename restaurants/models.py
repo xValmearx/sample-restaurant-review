@@ -1,3 +1,7 @@
+# Caleb Taylor
+# CIS 218
+# 10/24/2024
+
 from django.db import models
 from django.urls import reverse
 
@@ -41,7 +45,9 @@ class Review(models.Model):
     update = models.DateTimeField(auto_now=True)
 
     def __str__(self):
+        """Resturn string of body text"""
         return self.body[:50]
 
     def get_absolute_url(self):
+        """returns url location"""
         return reverse("review_details", kwargs={"pk": self.pk})

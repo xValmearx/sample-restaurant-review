@@ -1,3 +1,6 @@
+<!Caleb Taylor>
+<! CIS 218>
+<! 10/24/2024>
 {% extends "base.html" %}
 
 {% block title %} <h1><a class="btn btn-primary" href = "{% url "review_new"%}" class - "btn btn-primary">Write New Review</a></h1> {% endblock title %}
@@ -6,6 +9,7 @@
 {% block page_name %} {{restaurant.name}}{% endblock page_name %}
 
 {% block contents %}
+  <br>
 
   {% if restaurant.reviews.all%}
 

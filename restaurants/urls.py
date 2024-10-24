@@ -1,3 +1,6 @@
+# Caleb Taylor
+# CIS 218
+# 10/24/2024
 from django.urls import path
 
 from .views import RestaurantView, RestaurantDetailView, CreateReview, DetailedReview, DeleteReview, UpdateReview

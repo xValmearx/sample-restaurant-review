@@ -1,9 +1,13 @@
+<!Caleb Taylor>
+<! CIS 218>
+<! 10/24/2024>
 {% extends "base.html" %}
 
 
 {% block page_name %} <a href="javascript:history.back()">{{review.restaurant}}</a>  {% endblock page_name %}
 
 {% block contents %}
+<br>
 
   <form action="" method = "POST">
 
@@ -11,7 +15,7 @@
 
     {{form.as_p}}
 
-    <button type = "submit">Update</button>
+    <button class="btn btn-primary" type = "submit">Update</button>
 
   </form>
 
