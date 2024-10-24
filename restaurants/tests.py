@@ -36,3 +36,26 @@ class ReviewTest(TestCase):
         self.assertEqual(self.review.body, "i like ihop")
         self.assertEqual(self.review.rating, "5")
         self.assertEqual(self.review.get_absolute_url(), "/review/1")
+
+    def test_url_exist_at_correct_location_restaurant_listview(self):
+        """Test URL exist at correct location"""
+
+        repsonce = self.client.get("/")
+        self.assertEqual(repsonce.status_code, 200)
+
+    def test_url_exist_at_correct_location_restaurant_detailview(self):
+        """test URL exist at correct location for the detailview"""
+
+        response = self.client.get("/restaurant/1")
+
+        self.assertEqual(response.status_code, 200)
+
+    def test_post_listview(self):
+
+        response = self.client.get("/restaurant/1")
+
+        self.assertEqual(response.status_code, 200)
+
+        self.assertContains(response, "i like ihop")
+
+        self.assertTemplateUsed(response, "restaurant_details.html")
