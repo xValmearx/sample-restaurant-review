@@ -1,7 +1,9 @@
 # Assignment 3 - Creating a Restaurant Rating Site
 
 ## Author
-
+Caleb Taylor
+CIS 218
+10/25/2024
 
 
 ## Description
@@ -127,9 +129,9 @@ You should also be able to load bootstrap via a CDN link which will save you fro
 | **Extra Credit** Full Heroku Deployment  |   **5**|
 
 ## Outside Resources Used
-
+N/A
 
 
 ## Known Problems, Issues, And/Or Errors in the Program
-
+When you click go back button on the new review page it takes you back to the homepage instead of the restaurant page
 
